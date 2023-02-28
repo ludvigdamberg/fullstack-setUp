@@ -23,6 +23,8 @@ function App() {
      axios.get('http://localhost:5000/users')
     .then(res => {
       setUsers(res.data)
+      setPassword("")
+      setUsername("")
     })
   }
 
@@ -31,8 +33,6 @@ function App() {
     axios.post("http://localhost:5000/save",{username:username,password:password})
     .then((res) => {
       getUsers()
-      setPassword("")
-      setUsername("")
       console.log("Created Successfully...")
       
     })
